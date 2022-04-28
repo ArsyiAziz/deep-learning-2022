@@ -1,6 +1,9 @@
 # Midterm Assignment
 
-Milestones
+**Selected topic:** Transformers and Multi-head Attention (Task 2)
+
+**Milestones**
+
 - [x] Learn about transformers
 - [x] Run the code in the referenced notebook
 - [x] Create annotations in a new notebook
