@@ -41,7 +41,7 @@ Universitas Hasanuddin\\
 
 \IEEEpeerreviewmaketitle
 \begin{abstract}
-Pix2Pix is a general purpose framework that is designed for image-to-image translation. This framework implements a the conditional type of a generative adversarial network, known a cGAN. The use of cGANs in this framework allows it to be used in various context, such as image reconstruction, and image coloring. To explore this flexibility, we have conducted an evaluation on the framework to test its ability in imitating images from three different datasets: \textit{maps}, \textit{edges2shoes}, and \textit{facades}. The assessment of the framework's performance was done by manual inspection though the use of a quick response program. The result of this evaluation shows that Pix2Pix was able to successfully synthesize realistic looking images for two of the three datasets.
+Pix2Pix is a general purpose framework that is designed for image-to-image translation. This framework implements the conditional type of the generative adversarial network, known as the cGAN. The use of cGANs in this framework allows it to be used in various context, such as image reconstruction, and image coloring. To explore this capability, we have conducted an evaluation on the framework to test its ability in imitating images from three different datasets: \textit{maps}, \textit{edges2shoes}, and \textit{facades}. The assessment of the framework's performance was done by manual inspection though the use of a quick response program. The result of this evaluation shows that Pix2Pix was able to successfully synthesize realistic looking images for two of the three datasets.
 
 \end{abstract}
 
@@ -145,7 +145,7 @@ The U-Net architecture consists of two main parts, which are:
 \subsubsection{PatchGAN}
 PatchGAN, also known as the Markovian discriminator is a type of discriminator that classifies an image by dividing the image into blocks of size $NxN$, known as patches.
 
-To classify the images, the discriminator does a convolution on all the patches in an image and tries to classify whether or not the patches represent real or fake images. The result of each of these classifications is not a scaler, but an array of size $NxN$, where each element of the array has a value in the range of [0-1]. The result of the overall classification of the image is obtained by finding the average value of each patch.
+To classify the images, the discriminator does a convolution on all the patches in an image and tries to classify whether or not the patches represent real or fake images. The result of each of these classifications is not a scalar, but an array of size $NxN$, where each element of the array has a value in the range of [0-1]. The result of the overall classification of the image is obtained by finding the average value of each patch.
 
 Dividing an image into several patches is advantageous to the models performance. By reducing the image into small patches, then the number of parameters required by the model is thus reduced (see \cite{isola2017image}).
 
@@ -168,7 +168,7 @@ The datasets we used in our experiments are three of the datasets used in the or
 Each of these data sets consists of ground truth image and label image pairs. Firstly, in the facades dataset, the ground truth images are pictures of building facades and its label images are architectural elements the buildings. Secondly, in the maps data set, its ground truth images are satellite photos and its label images are map images. Finally, in the edges2shoes data set, the ground truth images are pictures of shoes and its label images are sketches of shoes.
 
 \subsection{Hyperparameters}
-For each of the data sets, we trained a separate Pix2Pix model which use the same hyper-parameters. These hyper-parameters include the use of mini-batch SGD and the Adam optimizer with a learning rate of 0.0002 and a $\beta_1$ value of 0.5, as well as a total of 100 epochs.
+For each of the data sets, we trained a separate Pix2Pix model which use the same hyper-parameters. These hyper-parameters include the use of mini-batch SGD and the Adam optimizer with a learning rate of 0.0002 and a $\beta_1$ value of 0.5, as well  as a total of 100 epochs.
 
 \section{Analysis and Interpretation}
 Table \ref{tab:results} shows the results of our evaluation. In this table, we can see that for both the \textit{maps} and \textit{edges2shoes} datasets, our human assessor was only able to correctly identify 60\% of the synthetic images and 72\% of the real images. This indicates that the models were able to synthesize a few realistic images for these data sets. However, it also indicates that our human assessor had some difficulty in identifying the real images, which can be attributed to the low resolution of the images (see fig \ref{fig:mapsrealincorrect} and fig \ref{fig:edges2shoesrealincorrect}). For the \textit{facades} dataset, our human assessor was able to identify almost all of the images correctly (96\% of real images and 96\% of fake images). This indicates that our Pix2Pix model could not produce realistic looking images for this dataset. 
@@ -178,14 +178,14 @@ Upon close inspection of the resulting images (see Appendix), we made a couple o
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.8\columnwidth]{Maps real incorrect.png} 
-\caption{A real maps image which was incorrectly identified}.
+\caption{A real \textit{maps} image which was incorrectly identified}.
 \label{fig:mapsrealincorrect}
 \end{figure}
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.8\columnwidth]{Edges2Shoes real incorrect.png}
-\caption{A real edges2shoes image which was incorrectly identified}.
+\caption{A real \textit{edges2shoes} image which was incorrectly identified}.
 \label{fig:edges2shoesrealincorrect}
 \end{figure}
 
@@ -221,21 +221,21 @@ Following this conclusion, we recommend that further evaluation should be conduc
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.6\columnwidth]{ex_maps.png} 
-\caption{Five samples taken from the maps dataset.}
+\caption{Five samples taken from the \textit{maps} dataset.}
 \label{fig:ex_maps}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.6\columnwidth]{ex_edges2shoes.png} 
-\caption{Five samples taken from the edges2shoes dataset.}
+\caption{Five samples taken from the \textit{edges2shoes} dataset.}
 \label{fig:ex_edges2shoes}
 \end{figure}
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.6\columnwidth]{ex_facades.png} 
-\caption{Five samples taken from the facades dataset.}.
+\caption{Five samples taken from the \textit{facades} dataset.}.
 \label{fig:ex_facades}
 \end{figure}
 
