@@ -1,6 +1,6 @@
-# Midterm Assignment
+# Final Assignment
 
-**Selected topic:** Transformers and Multi-head Attention (Task 2)
+**Selected topic:** Image-to-Image Translation with Conditional Adversarial Networks 
 
 **Part 1:**  See code directory
 
